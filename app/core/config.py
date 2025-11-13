@@ -14,7 +14,13 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 480
 
     # Accept string, comma-separated string, JSON array, or "*"
-    CORS_ORIGINS: List[str] | str = ["http://localhost:5173"]
+    CORS_ORIGINS: List[str] | str = [
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://127.0.0.1:5173",
+        "http://127.0.0.1:5174",
+        "*", # for developement only
+    ]
 
     model_config = SettingsConfigDict(
         env_file=".env",
