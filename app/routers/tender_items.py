@@ -6,7 +6,7 @@ from app.models.entities import TenderItem
 from app.schemas.common import TenderItemCreate, TenderItemUpdate, TenderItemRead
 from app.deps import get_current_user
 
-router = APIRouter(prefix="/tender-items", tags=["Tender Items"])
+router = APIRouter(prefix="/tender_items", tags=["Tender Items"])
 
 @router.get("/", response_model=list[TenderItemRead])
 def list_items(db: Session = Depends(get_db), _: str = Depends(get_current_user)):
